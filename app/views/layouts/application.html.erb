@@ -1,7 +1,14 @@
 <html>
 
   <head>
-    <title>Ticketee</title>
+
+    <title>
+      <% if content_for?(:title) %>
+        <%= yield(:title) %>
+      <% else %>
+        Ticketee
+      <% end %>
+    </title>
 
     <%= stylesheet_link_tag "application" %>
 
