@@ -24,12 +24,12 @@ gem 'therubyracer'
 gem 'jquery-rails'
 
 group :test, :development do
-  gem 'rspec-rails', "~> 2.13.2"
+gem 'rspec-rails', '~> 2.11'
+end
+group :test do
+gem 'capybara', '1.1.2'
 end
 
-group :test do
-  gem 'capybara', "2.0.2"
-end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
