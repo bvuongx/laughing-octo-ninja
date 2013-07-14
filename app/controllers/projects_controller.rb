@@ -1,10 +1,11 @@
 class ProjectsController < ApplicationController
 
   def index
+    @projects = Project.all
   end
 
   def new
-  @project = Project.new
+    @project = Project.new
   end
 
   def create
@@ -23,4 +24,5 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
   end
+
 end
