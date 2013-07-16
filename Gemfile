@@ -26,16 +26,16 @@ gem 'jquery-rails'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'
-  gem 'pry-rails'
-  gem 'launchy'
+#  gem 'pry-rails'
+#  gem 'launchy'
 end
 
 group :test do
   gem 'capybara', '1.1.2'
   gem 'factory_girl', '2.6.4'
-  gem 'devise', '2.1.0'
 end
 
+  gem 'devise', '2.1.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
