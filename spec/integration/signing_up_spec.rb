@@ -11,4 +11,6 @@ feature 'Signing up' do
     message = "Please open the link to activate your account."
     page.should have_content(message)
   end
+
 end
+
