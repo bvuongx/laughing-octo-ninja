@@ -2,9 +2,10 @@ require 'spec_helper'
 
 feature "Viewing tickets" do
   before do
+    user = Factory(:confirmed_user)
     textmate_2 = Factory(:project, :name => "TextMate 2")
+    define_permission!(user, "view", textmate_2)
 
-    user = Factory(:user)
     ticket = Factory(:ticket,
                    :project => textmate_2,
                    :title => "Make it shiny!",
@@ -17,13 +18,15 @@ feature "Viewing tickets" do
             :description => "Gradients! Starbursts! Oh my!")
 
     internet_explorer = Factory(:project, :name => "Internet Explorer")
+    define_permission!(user, "view", internet_explorer)
     Factory(:ticket,
         :project => internet_explorer,
         :title => "Standards compliance",
         :description => "Isn't a joke.")
 
-  visit '/'
-end
+    sign_in_as!(user)
+    visit '/'
+  end
 
   scenario "Viewing tickets for a given project" do
     click_link "TextMate 2"
